@@ -1,0 +1,20 @@
+{
+  "name": "research-codex",
+  "interface": {
+    "displayName": "Research Codex"
+  },
+  "plugins": [
+    {
+      "name": "research-toolkit-manager",
+      "source": {
+        "source": "local",
+        "path": "./plugins/research-toolkit-manager"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Research"
+    }
+  ]
+}

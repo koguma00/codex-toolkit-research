@@ -1,0 +1,35 @@
+{
+  "name": "research-toolkit-manager",
+  "version": "0.1.0",
+  "description": "Install, update, and report a small pinned set of personal research plugins for Codex.",
+  "author": {
+    "name": "koguma00",
+    "url": "https://github.com/koguma00"
+  },
+  "homepage": "https://github.com/koguma00/research-codex-toolkit",
+  "repository": "https://github.com/koguma00/research-codex-toolkit",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "plugin-manager",
+    "reproducibility"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Research Toolkit Manager",
+    "shortDescription": "Install and update a pinned research plugin set.",
+    "longDescription": "Manages a minimal, version-pinned Codex research stack from public GitHub repositories and reports exact installation status.",
+    "developerName": "koguma00",
+    "category": "Research",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/koguma00/research-codex-toolkit",
+    "defaultPrompt": [
+      "연구용 플러그인 설치해.",
+      "연구용 플러그인 업데이트해.",
+      "연구용 플러그인 상태 확인해."
+    ]
+  }
+}
