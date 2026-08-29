@@ -49,7 +49,8 @@
       "name": "AI Paper Search",
       "repository": "https://github.com/koguma00/ai-paper-search.git",
       "ref": "main",
-      "commit": "227684dfead9456a744f806132f8786d8025ca99",
+      "commit": "8a218d62f9007e455524d825729250afa9ac0f4c",
+      "version": "0.2.0",
       "reason_not_default": "Recall and ICML/IJCAI proceedings enumeration require fixes before default use"
     }
   ]
