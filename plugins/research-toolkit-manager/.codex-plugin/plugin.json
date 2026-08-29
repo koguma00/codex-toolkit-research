@@ -1,7 +1,7 @@
 {
   "name": "research-toolkit-manager",
-  "version": "0.1.0",
-  "description": "Install, update, and report a small pinned set of personal research plugins for Codex.",
+  "version": "0.2.0",
+  "description": "Install, update, and report a pinned set of personal research plugins and skills for Codex.",
   "author": {
     "name": "koguma00",
     "url": "https://github.com/koguma00"
@@ -17,8 +17,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Research Toolkit Manager",
-    "shortDescription": "Install and update a pinned research plugin set.",
-    "longDescription": "Manages a minimal, version-pinned Codex research stack from public GitHub repositories and reports exact installation status.",
+    "shortDescription": "Install and update a pinned research toolkit.",
+    "longDescription": "Manages a version-pinned Codex research stack of plugins and standalone skills from public GitHub repositories and reports exact installation status.",
     "developerName": "koguma00",
     "category": "Research",
     "capabilities": [

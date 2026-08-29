@@ -1,9 +1,9 @@
 # Research purpose
 
-This public repository provides a minimal, reproducible Codex research-plugin
-stack. It manages only the pinned public dependencies in
+This public repository provides a minimal, reproducible Codex research toolkit.
+It manages only the pinned public plugins and skills in
 `plugins/research-toolkit-manager/registry/plugins.lock.json`. Never add a
-plugin to the default set without an explicit user request and a successful
+dependency to the default set without an explicit user request and a successful
 installation check.
 
 # Environment
@@ -22,6 +22,11 @@ Interpret short Korean requests as follows:
 - “연구용 플러그인 상태 확인해”: run
   `python3 plugins/research-toolkit-manager/scripts/manage.py status`.
 
+When a user gives this repository URL to a fresh Codex session and asks to
+install or set up the research toolkit, clone the public repository if needed
+and run `python3 bootstrap.py`. This single entry point installs the manager,
+all default plugins, and all default standalone skills.
+
 Do not install entries under `experimental_plugins` unless the user explicitly
 names one. Report exact versions after every operation. Do not store API keys,
 Codex authentication, user configuration, task history, or session history.
@@ -31,7 +36,8 @@ Codex authentication, user configuration, task history, or session history.
 - `.agents/plugins/marketplace.json`: public Codex marketplace entry.
 - `plugins/research-toolkit-manager/`: installable manager plugin and skill.
 - `plugins/research-toolkit-manager/registry/plugins.lock.json`: canonical
-  dependency versions and commits.
+  plugin and skill versions, paths, and commits.
 - `plugins/research-toolkit-manager/scripts/manage.py`: install, update, and
   status implementation.
+- `bootstrap.py`: context-free first-install entry point for a new device.
 - `README.md`: anonymous first-install instructions.

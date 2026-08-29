@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "managed_plugins": [
     {
       "name": "ARS-Codex",
@@ -20,6 +20,28 @@
       "commit": "348d88989dd4f7faf2638eb76e212ed62690a6c8",
       "version": "0.7.1",
       "purpose": "arXiv search, verification, full text, LaTeX, and citation graphs"
+    }
+  ],
+  "managed_skills": [
+    {
+      "name": "Anthropic Community ELI5",
+      "skill_name": "eli5",
+      "repository": "https://github.com/anthropics/claude-plugins-community.git",
+      "ref": "794af9e63d07fad17087dcab61f21f44cb48effd",
+      "commit": "794af9e63d07fad17087dcab61f21f44cb48effd",
+      "path": "eli5/skills/eli5",
+      "codex_adapter": "eli5-v1",
+      "purpose": "Large-picture, low-text HTML explanations"
+    },
+    {
+      "name": "Handoff",
+      "skill_name": "handoff",
+      "repository": "https://github.com/mattpocock/skills.git",
+      "ref": "d28dfdc39beadc3142a33359b5cfa4765dcbd0bc",
+      "commit": "d28dfdc39beadc3142a33359b5cfa4765dcbd0bc",
+      "path": "skills/productivity/handoff",
+      "codex_adapter": "handoff-v1",
+      "purpose": "Redacted cross-session handoff documents"
     }
   ],
   "experimental_plugins": [
