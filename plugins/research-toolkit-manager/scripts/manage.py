@@ -208,15 +208,40 @@ def adapt_skill_for_codex(dep: Dict[str, Any], staging: Path) -> None:
             "\n<!-- Modified for Codex compatibility by research-codex-toolkit: "
             "invocation metadata and argument handling. -->\n"
         )
-    elif adapter == "handoff-v1":
+    elif adapter == "handoff-v2":
         unsupported = (
             'argument-hint: "What will the next session be used for?"\n',
             "disable-model-invocation: true\n",
         )
-        if not all(line in text for line in unsupported):
+        original_description = (
+            "description: Compact the current conversation into a handoff document "
+            "for another agent to pick up."
+        )
+        codex_description = (
+            "description: Compact the current conversation into copyable Markdown "
+            "for another agent to continue the work."
+        )
+        original_instruction = (
+            "Write a handoff document summarising the current conversation so a fresh agent "
+            "can continue the work. Save to the temporary directory of the user's OS - not "
+            "the current workspace."
+        )
+        codex_instruction = (
+            "Write a handoff document summarising the current conversation so a fresh agent "
+            "can continue the work. Output it directly in the conversation inside one fenced "
+            "Markdown code block so the user can copy and paste it. Do not save a file unless "
+            "the user explicitly asks. Output no preamble or follow-up outside the block."
+        )
+        if (
+            not all(line in text for line in unsupported)
+            or original_description not in text
+            or original_instruction not in text
+        ):
             raise ManageError("Handoff upstream format changed; update codex_adapter")
         for line in unsupported:
             text = text.replace(line, "", 1)
+        text = text.replace(original_description, codex_description, 1)
+        text = text.replace(original_instruction, codex_instruction, 1)
     else:
         raise ManageError(f"Unknown Codex skill adapter: {adapter}")
     skill_path.write_text(text, encoding="utf-8")

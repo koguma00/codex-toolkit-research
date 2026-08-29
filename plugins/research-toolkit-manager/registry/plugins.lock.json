@@ -40,7 +40,7 @@
       "ref": "d28dfdc39beadc3142a33359b5cfa4765dcbd0bc",
       "commit": "d28dfdc39beadc3142a33359b5cfa4765dcbd0bc",
       "path": "skills/productivity/handoff",
-      "codex_adapter": "handoff-v1",
+      "codex_adapter": "handoff-v2",
       "purpose": "Redacted cross-session handoff documents"
     }
   ],
