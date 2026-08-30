@@ -31,7 +31,9 @@ class ManageError(RuntimeError):
     pass
 
 
-def run(args: Iterable[str], *, check: bool = True, quiet: bool = False) -> subprocess.CompletedProcess[str]:
+def run(
+    args: Iterable[str], *, check: bool = True, quiet: bool = False
+) -> subprocess.CompletedProcess[str]:
     command = list(args)
     result = subprocess.run(command, text=True, capture_output=True)
     if not quiet:
@@ -61,6 +63,7 @@ def load_lock() -> Dict[str, Any]:
         data.get("schema_version") != 2
         or not isinstance(data.get("managed_plugins"), list)
         or not isinstance(data.get("managed_skills"), list)
+        or not isinstance(data.get("superseded_plugins", []), list)
     ):
         raise ManageError("Unsupported or malformed plugins.lock.json")
     return data
@@ -100,6 +103,24 @@ def reconcile_plugin(dep: Dict[str, Any]) -> None:
     )
     add_marketplace(dep)
     run(["codex", "plugin", "add", dep["plugin_id"], "--json"])
+
+
+def remove_superseded_plugin(dep: Dict[str, Any]) -> None:
+    installed = installed_plugins()
+    if dep["plugin_id"] in installed:
+        run(["codex", "plugin", "remove", dep["plugin_id"], "--json"])
+    current_marketplaces = marketplaces()
+    if dep["marketplace"] in current_marketplaces:
+        run(
+            [
+                "codex",
+                "plugin",
+                "marketplace",
+                "remove",
+                dep["marketplace"],
+                "--json",
+            ]
+        )
 
 
 def install_plugin(dep: Dict[str, Any]) -> None:
@@ -155,7 +176,9 @@ def copy_skill_from_archive(dep: Dict[str, Any], staging: Path) -> None:
             with urllib.request.urlopen(archive_url, timeout=60) as response:
                 archive_path.write_bytes(response.read())
         except (OSError, TimeoutError) as exc:
-            raise ManageError(f"Cannot download {dep['name']} from {archive_url}") from exc
+            raise ManageError(
+                f"Cannot download {dep['name']} from {archive_url}"
+            ) from exc
 
         found_skill = False
         try:
@@ -271,7 +294,9 @@ def read_provenance(destination: Path) -> Dict[str, Any] | None:
 def install_skill(dep: Dict[str, Any]) -> None:
     SKILLS_ROOT.mkdir(parents=True, exist_ok=True)
     destination = SKILLS_ROOT / dep["skill_name"]
-    staging = Path(tempfile.mkdtemp(prefix=f".{dep['skill_name']}.new-", dir=SKILLS_ROOT))
+    staging = Path(
+        tempfile.mkdtemp(prefix=f".{dep['skill_name']}.new-", dir=SKILLS_ROOT)
+    )
     previous = None
     try:
         copy_skill_from_archive(dep, staging)
@@ -291,7 +316,10 @@ def install_skill(dep: Dict[str, Any]) -> None:
 
         if destination.exists():
             installed_provenance = read_provenance(destination)
-            if installed_provenance and installed_provenance.get("managed_by") == "research-codex-toolkit":
+            if (
+                installed_provenance
+                and installed_provenance.get("managed_by") == "research-codex-toolkit"
+            ):
                 previous = SKILLS_ROOT / f".{dep['skill_name']}.old-{os.getpid()}"
             else:
                 timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
@@ -358,10 +386,14 @@ def main() -> int:
     lock = load_lock()
     plugins = lock["managed_plugins"]
     skills = lock["managed_skills"]
+    superseded_plugins = lock.get("superseded_plugins", [])
     if args.action in {"install", "update"}:
         for dep in plugins:
             print(f"==> plugin: {dep['name']} {dep['version']}")
             install_plugin(dep)
+        for dep in superseded_plugins:
+            print(f"==> remove superseded plugin: {dep['name']}")
+            remove_superseded_plugin(dep)
         for dep in skills:
             print(f"==> skill: {dep['name']} {dep['commit'][:12]}")
             install_skill(dep)

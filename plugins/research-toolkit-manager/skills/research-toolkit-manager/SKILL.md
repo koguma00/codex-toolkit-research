@@ -8,6 +8,8 @@ description: Install, update, or report the user's pinned research plugins and s
 Manage only the plugins and standalone skills declared in
 `../../registry/plugins.lock.json`.
 Do not install experimental entries unless the user explicitly names them.
+After all managed replacements install successfully, remove plugins listed in
+`superseded_plugins` to prevent duplicate MCP servers.
 
 Resolve `../../scripts/manage.py` relative to this `SKILL.md`, convert it to an
 absolute path, and use the matching command:
