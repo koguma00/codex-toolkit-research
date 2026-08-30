@@ -23,14 +23,14 @@ Start a new Codex conversation after installation. You can then say only:
 
 ## Default stack
 
-- Research Toolkit Manager `0.2.3`
+- Research Toolkit Manager `0.2.4`
 - ARS-Codex `0.1.27`
 - arXiv MCP Server `0.7.1`
 - Anthropic Community `eli5`, pinned by commit with a minimal Codex adapter
 - Matt Pocock `handoff`, pinned by commit with a copyable-output Codex adapter
 
-AI Paper Search `0.2.0` is tracked as experimental and is not installed by default
-until its recall and proceedings-enumeration issues are fixed.
+AI Paper Search `0.3.0` is tracked as experimental and is not installed by default
+until semantic recall and ICML/IJCAI proceedings completeness pass a gold-set audit.
 
 Project-specific tools such as `auto-eval-MAS` are intentionally not managed
 here. Keep each one in its own project-scoped Codex plugin repository.

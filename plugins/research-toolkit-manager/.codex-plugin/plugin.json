@@ -1,6 +1,6 @@
 {
   "name": "research-toolkit-manager",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Install, update, and report a pinned set of personal research plugins and skills for Codex.",
   "author": {
     "name": "koguma00",
