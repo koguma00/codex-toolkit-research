@@ -23,7 +23,7 @@ Start a new Codex conversation after installation. You can then say only:
 
 ## Default stack
 
-- Research Toolkit Manager `0.2.5`
+- Research Toolkit Manager `0.2.6`
 - ARS-Codex `0.1.27`
 - AI Paper Search `0.3.1`, including the pinned arXiv MCP runtime
 - Anthropic Community `eli5`, pinned by commit with a minimal Codex adapter

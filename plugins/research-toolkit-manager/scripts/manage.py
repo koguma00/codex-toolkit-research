@@ -124,6 +124,14 @@ def remove_superseded_plugin(dep: Dict[str, Any]) -> None:
 
 
 def install_plugin(dep: Dict[str, Any]) -> None:
+    installed = installed_plugins().get(dep["plugin_id"])
+    if (
+        installed
+        and installed.get("enabled")
+        and installed.get("version") == dep["version"]
+    ):
+        return
+
     current_marketplaces = marketplaces()
     if dep["marketplace"] not in current_marketplaces:
         add_marketplace(dep)

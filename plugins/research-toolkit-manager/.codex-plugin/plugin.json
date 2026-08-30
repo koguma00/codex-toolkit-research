@@ -1,6 +1,6 @@
 {
   "name": "research-toolkit-manager",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Install, update, and report a pinned set of personal research plugins and skills for Codex.",
   "author": {
     "name": "koguma00",
@@ -27,9 +27,9 @@
     ],
     "websiteURL": "https://github.com/koguma00/research-codex-toolkit",
     "defaultPrompt": [
-      "연구용 플러그인 설치해.",
-      "연구용 플러그인 업데이트해.",
-      "연구용 플러그인 상태 확인해."
+      "\uc5f0\uad6c\uc6a9 \ud50c\ub7ec\uadf8\uc778 \uc124\uce58\ud574.",
+      "\uc5f0\uad6c\uc6a9 \ud50c\ub7ec\uadf8\uc778 \uc5c5\ub370\uc774\ud2b8\ud574.",
+      "\uc5f0\uad6c\uc6a9 \ud50c\ub7ec\uadf8\uc778 \uc0c1\ud0dc \ud655\uc778\ud574."
     ]
   }
 }
