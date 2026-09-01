@@ -43,7 +43,7 @@ class RegistryTests(unittest.TestCase):
             if item["plugin_id"] == "siit-presentation@siit-presentation"
         ]
         self.assertEqual(len(entries), 1)
-        self.assertEqual(entries[0]["version"], "0.1.0")
+        self.assertEqual(entries[0]["version"], "0.1.1")
 
 
 if __name__ == "__main__":

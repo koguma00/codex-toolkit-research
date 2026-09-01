@@ -24,7 +24,7 @@ Start a new Codex conversation after installation. You can then say only:
 ## Default stack
 
 - Research Toolkit Manager `0.3.1`
-- SIIT Presentation `0.1.0`, installed from `codex-presentation-siit` with a Google Slides-first and PowerPoint-finishing workflow
+- SIIT Presentation `0.1.1`, installed from `codex-presentation-siit` with a Google Slides-first and PowerPoint-finishing workflow
 - ARS-Codex `0.1.27`
 - AI Paper Search `0.3.1`, including the pinned arXiv MCP runtime
 - Anthropic Community `eli5`, pinned by commit with a minimal Codex adapter

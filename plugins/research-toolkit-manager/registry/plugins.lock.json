@@ -27,8 +27,8 @@
       "marketplace": "siit-presentation",
       "repository": "https://github.com/koguma00/codex-presentation-siit.git",
       "ref": "main",
-      "commit": "6793422b38664d7aee3cee4f3018a2871184f7d6",
-      "version": "0.1.0",
+      "commit": "9309266d4d4635e5b7045b076e92990b57c9c0b3",
+      "version": "0.1.1",
       "purpose": "Google Slides-first SIIT research presentation authoring with detailed PowerPoint finishing"
     }
   ],
