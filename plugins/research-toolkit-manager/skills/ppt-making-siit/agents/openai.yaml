@@ -1,0 +1,4 @@
+interface:
+  display_name: "SIIT Presentation Style"
+  short_description: "Create SIIT-style research decks with Noto Sans KR."
+  default_prompt: "Create or revise this research presentation using my SIIT slide style."

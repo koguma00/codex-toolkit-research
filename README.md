@@ -23,7 +23,8 @@ Start a new Codex conversation after installation. You can then say only:
 
 ## Default stack
 
-- Research Toolkit Manager `0.2.6`
+- Research Toolkit Manager `0.3.0`
+- `ppt-making-siit`, the bundled SIIT/KAIST research-presentation style skill using `Noto Sans KR` for Google Slides and PowerPoint compatibility
 - ARS-Codex `0.1.27`
 - AI Paper Search `0.3.1`, including the pinned arXiv MCP runtime
 - Anthropic Community `eli5`, pinned by commit with a minimal Codex adapter

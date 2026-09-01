@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "source": {
+    "theme_share_url": "https://drive.google.com/file/d/1obVX5WxowqQWFm-w6y-d0MS430AyXi_G/view",
+    "example_slides_url": "https://docs.google.com/presentation/d/1KmG4KJhnUf3mQJdL2A0VxNoTegC3rMMYiBA7xbBXvV0/edit",
+    "inspection_date": "2026-09-01",
+    "source_slide_count": 21,
+    "source_aspect_ratio": "16:9"
+  },
+  "published_reference": {
+    "sanitized": true,
+    "retained_layout_families": 7,
+    "raw_source_included": false,
+    "speaker_notes_included": false,
+    "unused_source_media_included": false,
+    "font_normalization": "Noto Sans KR"
+  },
+  "authority": "Direct formatting in the example deck is stronger evidence than raw THMX Office accent and font metadata."
+}

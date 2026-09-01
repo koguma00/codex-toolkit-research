@@ -1,7 +1,7 @@
 {
   "name": "research-toolkit-manager",
-  "version": "0.2.6",
-  "description": "Install, update, and report a pinned set of personal research plugins and skills for Codex.",
+  "version": "0.3.0",
+  "description": "Install, update, and report a pinned personal research toolkit, including the SIIT presentation style skill.",
   "author": {
     "name": "koguma00",
     "url": "https://github.com/koguma00"
@@ -18,7 +18,7 @@
   "interface": {
     "displayName": "Research Toolkit Manager",
     "shortDescription": "Install and update a pinned research toolkit.",
-    "longDescription": "Manages a version-pinned Codex research stack of plugins and standalone skills from public GitHub repositories and reports exact installation status.",
+    "longDescription": "Manages a version-pinned Codex research stack and bundles the user's reusable SIIT presentation design skill with cross-compatible Noto Sans KR typography.",
     "developerName": "koguma00",
     "category": "Research",
     "capabilities": [

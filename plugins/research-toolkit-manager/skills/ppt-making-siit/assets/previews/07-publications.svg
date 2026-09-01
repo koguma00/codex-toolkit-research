@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <style>
+    text { font-family: "Noto Sans KR", sans-serif; fill: #2D3741; }
+    .title { font-size: 54px; font-weight: 700; }
+    .h { font-size: 28px; font-weight: 700; }
+    .b { font-size: 22px; }
+    .s { font-size: 17px; fill: #636E78; }
+    .box { fill: #FFFFFF; stroke: #CDD5DD; stroke-width: 2; }
+  </style>
+  <text x="82" y="88" class="title">Publications</text>
+  <path d="M82 126 H1290" stroke="#0E6EB8" stroke-width="5"/><path d="M1290 126 H1518" stroke="#8EC31F" stroke-width="5"/>
+  <text x="85" y="185" class="b">Evidence inventory with concise, aligned rows</text><g><text x="100" y="280" class="h">01</text><text x="190" y="265" class="h">Main methodology paper</text><text x="190" y="310" class="s">Problem · method · controlled evaluation</text><text x="1280" y="285" class="b">Target venue</text><path d="M95 340 H1500" stroke="#D1D9E0" stroke-width="2"/></g><g><text x="100" y="430" class="h">02</text><text x="190" y="415" class="h">Reproducible implementation</text><text x="190" y="460" class="s">Configuration · prompts · source runs</text><text x="1280" y="435" class="b">Artifact</text><path d="M95 490 H1500" stroke="#D1D9E0" stroke-width="2"/></g><g><text x="100" y="580" class="h">03</text><text x="190" y="565" class="h">Robustness and failure analysis</text><text x="190" y="610" class="s">Sensitivity · cost · limitations</text><text x="1280" y="585" class="b">Appendix</text><path d="M95 640 H1500" stroke="#D1D9E0" stroke-width="2"/></g>
+  <text x="1400" y="852" class="s">SIIT STYLE</text>
+</svg>

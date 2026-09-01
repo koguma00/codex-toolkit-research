@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <style>
+    text { font-family: "Noto Sans KR", sans-serif; fill: #2D3741; }
+    .title { font-size: 54px; font-weight: 700; }
+    .h { font-size: 28px; font-weight: 700; }
+    .b { font-size: 22px; }
+    .s { font-size: 17px; fill: #636E78; }
+    .box { fill: #FFFFFF; stroke: #CDD5DD; stroke-width: 2; }
+  </style>
+  <text x="82" y="88" class="title">Roadmap</text>
+  <path d="M82 126 H1290" stroke="#0E6EB8" stroke-width="5"/><path d="M1290 126 H1518" stroke="#8EC31F" stroke-width="5"/>
+  <text x="85" y="185" class="b">A staged research program with one clear progression</text><path d="M150 490 H1450" stroke="#CDD5DD" stroke-width="8"/><g><circle cx="220" cy="490" r="22" fill="#004191"/><text x="160" y="430" class="h">01</text><text x="140" y="550" class="b">Problem</text></g><g><circle cx="520" cy="490" r="22" fill="#0E6EB8"/><text x="460" y="430" class="h">02</text><text x="440" y="550" class="b">Method</text></g><g><circle cx="820" cy="490" r="22" fill="#0E6EB8"/><text x="760" y="430" class="h">03</text><text x="740" y="550" class="b">Evidence</text></g><g><circle cx="1120" cy="490" r="22" fill="#8EC31F"/><text x="1060" y="430" class="h">04</text><text x="1020" y="550" class="b">Extension</text></g><g><circle cx="1400" cy="490" r="22" fill="#8EC31F"/><text x="1340" y="430" class="h">05</text><text x="1320" y="550" class="b">Release</text></g>
+  <text x="1400" y="852" class="s">SIIT STYLE</text>
+</svg>
