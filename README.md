@@ -6,7 +6,7 @@ Public, version-pinned management for a personal Codex research stack.
 
 Give a fresh Codex session only this request:
 
-> https://github.com/koguma00/research-codex-toolkit 에서 연구용 툴킷 설치해.
+> https://github.com/koguma00/codex-research-toolkit 에서 연구용 툴킷 설치해.
 
 No prior plugin context or GitHub login is required. Codex should clone this
 public repository and run:
@@ -23,8 +23,8 @@ Start a new Codex conversation after installation. You can then say only:
 
 ## Default stack
 
-- Research Toolkit Manager `0.3.0`
-- `ppt-making-siit`, the bundled SIIT/KAIST research-presentation style skill using `Noto Sans KR` for Google Slides and PowerPoint compatibility
+- Research Toolkit Manager `0.3.1`
+- SIIT Presentation `0.1.0`, installed from `codex-siit-presentation` with a Google Slides-first and PowerPoint-finishing workflow
 - ARS-Codex `0.1.27`
 - AI Paper Search `0.3.1`, including the pinned arXiv MCP runtime
 - Anthropic Community `eli5`, pinned by commit with a minimal Codex adapter

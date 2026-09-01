@@ -1,13 +1,13 @@
 {
   "name": "research-toolkit-manager",
-  "version": "0.3.0",
-  "description": "Install, update, and report a pinned personal research toolkit, including the SIIT presentation style skill.",
+  "version": "0.3.1",
+  "description": "Install, update, and report a version-pinned personal Codex research toolkit.",
   "author": {
     "name": "koguma00",
     "url": "https://github.com/koguma00"
   },
-  "homepage": "https://github.com/koguma00/research-codex-toolkit",
-  "repository": "https://github.com/koguma00/research-codex-toolkit",
+  "homepage": "https://github.com/koguma00/codex-research-toolkit",
+  "repository": "https://github.com/koguma00/codex-research-toolkit",
   "license": "MIT",
   "keywords": [
     "research",
@@ -18,14 +18,14 @@
   "interface": {
     "displayName": "Research Toolkit Manager",
     "shortDescription": "Install and update a pinned research toolkit.",
-    "longDescription": "Manages a version-pinned Codex research stack and bundles the user's reusable SIIT presentation design skill with cross-compatible Noto Sans KR typography.",
+    "longDescription": "Manages version-pinned first-party and external Codex plugins and standalone skills across research devices.",
     "developerName": "koguma00",
     "category": "Research",
     "capabilities": [
       "Read",
       "Write"
     ],
-    "websiteURL": "https://github.com/koguma00/research-codex-toolkit",
+    "websiteURL": "https://github.com/koguma00/codex-research-toolkit",
     "defaultPrompt": [
       "\uc5f0\uad6c\uc6a9 \ud50c\ub7ec\uadf8\uc778 \uc124\uce58\ud574.",
       "\uc5f0\uad6c\uc6a9 \ud50c\ub7ec\uadf8\uc778 \uc5c5\ub370\uc774\ud2b8\ud574.",
