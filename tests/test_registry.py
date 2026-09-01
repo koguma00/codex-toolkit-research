@@ -19,19 +19,19 @@ class RegistryTests(unittest.TestCase):
         )
         self.assertEqual(manifest["version"], "0.3.1")
 
-    def test_first_party_repository_names_start_with_codex(self):
-        owned = {
-            "ai-paper-search@ai-paper-search",
-            "siit-presentation@siit-presentation",
+    def test_first_party_repository_names_follow_purpose_first_convention(self):
+        expected = {
+            "ai-paper-search@ai-paper-search": "codex-paper-search-venue-first",
+            "siit-presentation@siit-presentation": "codex-presentation-siit",
         }
         by_id = {
             item["plugin_id"]: item for item in self.lock["managed_plugins"]
         }
-        self.assertTrue(owned <= by_id.keys())
-        for plugin_id in owned:
+        self.assertTrue(expected.keys() <= by_id.keys())
+        for plugin_id, expected_name in expected.items():
             repository = by_id[plugin_id]["repository"]
             name = repository.removesuffix(".git").rsplit("/", 1)[-1]
-            self.assertTrue(name.startswith("codex-"), repository)
+            self.assertEqual(name, expected_name, repository)
             self.assertEqual(len(by_id[plugin_id]["commit"]), 40)
 
     def test_presentation_is_managed_as_external_plugin(self):

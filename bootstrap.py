@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Iterable
 
 
-REPOSITORY = "https://github.com/koguma00/codex-research-toolkit.git"
+REPOSITORY = "https://github.com/koguma00/codex-toolkit-research.git"
 MARKETPLACE = "research-codex"
 MANAGER_PLUGIN = "research-toolkit-manager@research-codex"
 MANAGER_SCRIPT = (

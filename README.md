@@ -6,7 +6,7 @@ Public, version-pinned management for a personal Codex research stack.
 
 Give a fresh Codex session only this request:
 
-> https://github.com/koguma00/codex-research-toolkit 에서 연구용 툴킷 설치해.
+> https://github.com/koguma00/codex-toolkit-research 에서 연구용 툴킷 설치해.
 
 No prior plugin context or GitHub login is required. Codex should clone this
 public repository and run:
@@ -24,11 +24,14 @@ Start a new Codex conversation after installation. You can then say only:
 ## Default stack
 
 - Research Toolkit Manager `0.3.1`
-- SIIT Presentation `0.1.0`, installed from `codex-siit-presentation` with a Google Slides-first and PowerPoint-finishing workflow
+- SIIT Presentation `0.1.0`, installed from `codex-presentation-siit` with a Google Slides-first and PowerPoint-finishing workflow
 - ARS-Codex `0.1.27`
 - AI Paper Search `0.3.1`, including the pinned arXiv MCP runtime
 - Anthropic Community `eli5`, pinned by commit with a minimal Codex adapter
 - Matt Pocock `handoff`, pinned by commit with a copyable-output Codex adapter
+
+First-party repositories follow `codex-<purpose>-<specialization>`, so tools
+sort by purpose while the final segment records the implementation intent or local style.
 
 The standalone arXiv MCP plugin is superseded by AI Paper Search and removed
 during toolkit updates to avoid loading the same MCP server twice.

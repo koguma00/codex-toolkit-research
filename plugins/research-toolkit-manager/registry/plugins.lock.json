@@ -15,9 +15,9 @@
       "name": "AI Paper Search",
       "plugin_id": "ai-paper-search@ai-paper-search",
       "marketplace": "ai-paper-search",
-      "repository": "https://github.com/koguma00/codex-venue-first-paper-search.git",
+      "repository": "https://github.com/koguma00/codex-paper-search-venue-first.git",
       "ref": "main",
-      "commit": "2bb149aaafd6e9189c941cfa0ccd3a6ac11573ab",
+      "commit": "78cd0c33201a28328be0cc71c24e9ca6d841c177",
       "version": "0.3.1",
       "purpose": "Venue-first AI paper discovery, version verification, deep reading, and BibTeX retrieval"
     },
@@ -25,9 +25,9 @@
       "name": "SIIT Presentation",
       "plugin_id": "siit-presentation@siit-presentation",
       "marketplace": "siit-presentation",
-      "repository": "https://github.com/koguma00/codex-siit-presentation.git",
+      "repository": "https://github.com/koguma00/codex-presentation-siit.git",
       "ref": "main",
-      "commit": "e129e14678f769d6b9a2f67cdd9490c2caa2dbb8",
+      "commit": "6793422b38664d7aee3cee4f3018a2871184f7d6",
       "version": "0.1.0",
       "purpose": "Google Slides-first SIIT research presentation authoring with detailed PowerPoint finishing"
     }
