@@ -17,7 +17,14 @@ class RegistryTests(unittest.TestCase):
         manifest = json.loads(
             (PLUGIN / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8")
         )
-        self.assertEqual(manifest["version"], "0.3.1")
+        self.assertEqual(manifest["version"], "0.4.0")
+
+    def test_aica_reconnect_is_bundled_with_manager(self):
+        skill = PLUGIN / "skills" / "aica-reconnect"
+        self.assertTrue((skill / "SKILL.md").is_file())
+        self.assertTrue((skill / "agents" / "openai.yaml").is_file())
+        self.assertTrue((skill / "scripts" / "aica_reconnect.py").is_file())
+        self.assertTrue((skill / "scripts" / "aica_authorized_keys.py").is_file())
 
     def test_first_party_repository_names_follow_purpose_first_convention(self):
         expected = {

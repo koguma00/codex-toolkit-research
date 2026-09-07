@@ -12,14 +12,15 @@ After all managed replacements install successfully, remove plugins listed in
 `superseded_plugins` to prevent duplicate MCP servers.
 
 Resolve `../../scripts/manage.py` relative to this `SKILL.md`, convert it to an
-absolute path, and use the matching command:
+absolute path. Use `python3` on macOS and Linux. On Windows, use `py -3` when
+available and otherwise `python`. Use the matching command:
 
-- Install: `python3 <absolute-manage.py> install`
+- Install: `<python> <absolute-manage.py> install`
 - Update: first run `codex plugin marketplace upgrade research-codex`, then
   `codex plugin add research-toolkit-manager@research-codex`, resolve the
   currently installed manager plugin path from `codex plugin list --json`, and
-  run its `scripts/manage.py update`.
-- Status: `python3 <absolute-manage.py> status`
+  run `<python> <installed-manager>/scripts/manage.py update`.
+- Status: `<python> <absolute-manage.py> status`
 
 The commands are intentionally non-interactive. They may replace a skill with
 the same name; an unmanaged existing skill is first preserved under

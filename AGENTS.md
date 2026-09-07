@@ -34,10 +34,15 @@ Codex authentication, user configuration, task history, or session history.
 # Repository structure
 
 - `.agents/plugins/marketplace.json`: public Codex marketplace entry.
-- `plugins/research-toolkit-manager/`: installable manager plugin and skill.
+- `plugins/research-toolkit-manager/`: installable manager plugin, research
+  manager skill, and cross-platform AICA reconnect skill.
 - `plugins/research-toolkit-manager/registry/plugins.lock.json`: canonical
   plugin and skill versions, paths, and commits.
 - `plugins/research-toolkit-manager/scripts/manage.py`: install, update, and
   status implementation.
 - `bootstrap.py`: context-free first-install entry point for a new device.
 - `README.md`: anonymous first-install instructions.
+
+The bundled AICA skill must remain portable. Never commit its host, SSH user,
+personal persistent root, local profile, private key, public-key blob, pairing
+code, environment ID, access token, dynamic SSH port, or copied Codex state.

@@ -1,0 +1,7 @@
+interface:
+  display_name: "AICA Reconnect"
+  short_description: "Restore AICA SSH and issue an iPhone pairing code"
+  default_prompt: "Use $aica-reconnect to restore the AICA host on the new SSH port and issue an iPhone pairing code."
+
+policy:
+  allow_implicit_invocation: true
