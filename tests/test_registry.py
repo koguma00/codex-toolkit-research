@@ -17,7 +17,7 @@ class RegistryTests(unittest.TestCase):
         manifest = json.loads(
             (PLUGIN / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8")
         )
-        self.assertEqual(manifest["version"], "0.4.0")
+        self.assertEqual(manifest["version"], "0.4.1")
 
     def test_aica_reconnect_is_bundled_with_manager(self):
         skill = PLUGIN / "skills" / "aica-reconnect"
@@ -34,7 +34,7 @@ class RegistryTests(unittest.TestCase):
         by_id = {
             item["plugin_id"]: item for item in self.lock["managed_plugins"]
         }
-        self.assertTrue(expected.keys() <= by_id.keys())
+        self.assertEqual(set(expected), set(by_id))
         for plugin_id, expected_name in expected.items():
             repository = by_id[plugin_id]["repository"]
             name = repository.removesuffix(".git").rsplit("/", 1)[-1]

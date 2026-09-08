@@ -2,16 +2,6 @@
   "schema_version": 2,
   "managed_plugins": [
     {
-      "name": "ARS-Codex",
-      "plugin_id": "ars-codex@ars-codex",
-      "marketplace": "ars-codex",
-      "repository": "https://github.com/Imbad0202/academic-research-skills-codex.git",
-      "ref": "v0.1.27",
-      "commit": "7600799a41266379ed5e7716eef963a7161277c0",
-      "version": "0.1.27",
-      "purpose": "Research planning, review, writing, and synthesis workflows"
-    },
-    {
       "name": "AI Paper Search",
       "plugin_id": "ai-paper-search@ai-paper-search",
       "marketplace": "ai-paper-search",

@@ -1,6 +1,6 @@
 {
   "name": "research-toolkit-manager",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Manage a pinned research toolkit and restore a personal AICA Codex host.",
   "author": {
     "name": "koguma00",

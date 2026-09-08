@@ -28,10 +28,9 @@ Start a new Codex conversation after installation. You can then say only:
 
 ## Default stack
 
-- Research Toolkit Manager `0.4.0`, including the macOS/Windows AICA reconnect
+- Research Toolkit Manager `0.4.1`, including the macOS/Windows AICA reconnect
   and iPhone Remote pairing skill
 - SIIT Presentation `0.1.1`, installed from `codex-presentation-siit` with a Google Slides-first and PowerPoint-finishing workflow
-- ARS-Codex `0.1.27`
 - AI Paper Search `0.3.1`, including the pinned arXiv MCP runtime
 - Anthropic Community `eli5`, pinned by commit with a minimal Codex adapter
 - Matt Pocock `handoff`, pinned by commit with a copyable-output Codex adapter
