@@ -1,91 +1,99 @@
 #!/usr/bin/env python3
-"""Install the public Research Codex toolkit on a new device."""
-
+"""Install the research plugin; optionally migrate the former toolkit."""
 from __future__ import annotations
-
+import argparse
 import json
+import os
 import shutil
 import subprocess
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Iterable
+
+REPOSITORY = 'https://github.com/koguma00/codex-toolkit-research.git'
+MARKETPLACE = 'research-codex'
+PLUGIN_ID = 'research@research-codex'
+SKILLS = {'ai-paper-search', 'siit-presentation', 'aica-reconnect', 'eli5', 'handoff'}
+LEGACY = ('ai-paper-search@ai-paper-search', 'siit-presentation@siit-presentation',
+          'research-toolkit-manager@research-codex')
 
 
-REPOSITORY = "https://github.com/koguma00/codex-toolkit-research.git"
-MARKETPLACE = "research-codex"
-MANAGER_PLUGIN = "research-toolkit-manager@research-codex"
-MANAGER_SCRIPT = (
-    Path(__file__).resolve().parent
-    / "plugins"
-    / "research-toolkit-manager"
-    / "scripts"
-    / "manage.py"
-)
+def run(args):
+    result = subprocess.run(['codex', *args], text=True, capture_output=True)
+    if result.returncode:
+        raise RuntimeError(result.stderr.strip() or result.stdout.strip() or 'Codex command failed')
+    return json.loads(result.stdout) if result.stdout.strip() else {}
 
 
-class BootstrapError(RuntimeError):
-    pass
+def verify_install(result):
+    root = Path(result['installedPath'])
+    manifest = json.loads((root / '.codex-plugin/plugin.json').read_text())
+    if manifest['name'] != 'research':
+        raise RuntimeError('Unexpected installed plugin')
+    actual = {p.parent.name for p in (root / 'skills').glob('*/SKILL.md')}
+    if actual != SKILLS:
+        raise RuntimeError(f'Incomplete skill set: {sorted(actual)}')
+    mcp = json.loads((root / '.mcp.json').read_text())
+    if 'arxiv' not in mcp.get('mcpServers', {}):
+        raise RuntimeError('Missing arXiv MCP connection')
+    for path in ('src/ai_paper_search/cli.py', 'skills/siit-presentation/assets/siit-reference-template.pptx',
+                 'skills/aica-reconnect/scripts/aica_reconnect.py'):
+        if not (root / path).is_file():
+            raise RuntimeError(f'Missing installed resource: {path}')
+    return manifest['version']
 
 
-def run(args: Iterable[str], *, check: bool = True) -> subprocess.CompletedProcess[str]:
-    command = list(args)
-    result = subprocess.run(command, text=True, capture_output=True)
-    if result.stdout.strip():
-        print(result.stdout.strip())
-    if result.stderr.strip():
-        print(result.stderr.strip(), file=sys.stderr)
-    if check and result.returncode != 0:
-        raise BootstrapError(f"Command failed ({result.returncode}): {' '.join(command)}")
-    return result
+def migrate(home):
+    installed = run(['plugin', 'list', '--json'])
+    ids = {p['pluginId'] for p in installed.get('installed', []) if p.get('installed', True)}
+    for plugin in LEGACY:
+        if plugin in ids:
+            run(['plugin', 'remove', plugin, '--json'])
+            print(f'Removed former plugin: {plugin}')
+    backup = home / 'research-plugin-backups' / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+    for name in ('eli5', 'handoff'):
+        path = home / 'skills' / name
+        if not path.exists():
+            continue
+        marker = path / '.research-toolkit-source.json'
+        try:
+            managed = json.loads(marker.read_text()).get('managed_by') == 'research-codex-toolkit'
+        except (OSError, ValueError):
+            managed = False
+        if not managed or path.is_symlink():
+            print(f'Preserved unmanaged skill; review duplicate manually: {path}')
+            continue
+        backup.mkdir(parents=True, exist_ok=True)
+        shutil.move(str(path), str(backup / name))
+        print(f'Backed up former standalone skill: {backup / name}')
 
 
-def marketplace_source() -> str | None:
-    result = run(["codex", "plugin", "marketplace", "list", "--json"])
-    try:
-        payload = json.loads(result.stdout)
-    except json.JSONDecodeError as exc:
-        raise BootstrapError("Codex returned invalid marketplace JSON") from exc
-    for item in payload.get("marketplaces", []):
-        if item.get("name") == MARKETPLACE:
-            return item.get("marketplaceSource", {}).get("source")
-    return None
-
-
-def main() -> int:
-    if shutil.which("codex") is None:
-        raise BootstrapError("Codex CLI is not available on PATH")
-
-    source = marketplace_source()
-    if source and source.rstrip("/").removesuffix(".git") != REPOSITORY.removesuffix(".git"):
-        run(["codex", "plugin", "remove", MANAGER_PLUGIN, "--json"], check=False)
-        run(["codex", "plugin", "marketplace", "remove", MARKETPLACE, "--json"])
-        source = None
-
-    if source:
-        run(["codex", "plugin", "marketplace", "upgrade", MARKETPLACE, "--json"])
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--migrate-legacy', action='store_true',
+                        help='After verified installation, remove former plugins and back up toolkit-owned standalone skills')
+    args = parser.parse_args(argv)
+    if not shutil.which('codex'):
+        raise RuntimeError('Install Codex CLI before running bootstrap')
+    entries = run(['plugin', 'marketplace', 'list', '--json']).get('marketplaces', [])
+    existing = next((x for x in entries if x['name'] == MARKETPLACE), None)
+    if existing:
+        source = existing.get('marketplaceSource', {}).get('source', '')
+        if source.rstrip('/').removesuffix('.git') != REPOSITORY.removesuffix('.git'):
+            raise RuntimeError('research-codex points to another source; preserve it and resolve the naming conflict first')
+        run(['plugin', 'marketplace', 'upgrade', MARKETPLACE, '--json'])
     else:
-        run(
-            [
-                "codex",
-                "plugin",
-                "marketplace",
-                "add",
-                REPOSITORY,
-                "--ref",
-                "main",
-                "--json",
-            ]
-        )
-
-    run(["codex", "plugin", "add", MANAGER_PLUGIN, "--json"])
-    run([sys.executable, str(MANAGER_SCRIPT), "install"])
-    print("Installed. Start a new Codex conversation to load the toolkit.")
+        run(['plugin', 'marketplace', 'add', REPOSITORY, '--ref', 'main', '--json'])
+    result = run(['plugin', 'add', PLUGIN_ID, '--json'])
+    version = verify_install(result)
+    if args.migrate_legacy:
+        migrate(Path(os.environ.get('CODEX_HOME', str(Path.home() / '.codex'))).expanduser())
+    print(f'Installed {PLUGIN_ID} {version}. Start a new Codex task.')
     return 0
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     try:
         raise SystemExit(main())
-    except BootstrapError as exc:
-        print(f"error: {exc}", file=sys.stderr)
+    except (RuntimeError, OSError, ValueError, KeyError) as exc:
+        print(f'error: {exc}', file=sys.stderr)
         raise SystemExit(1)

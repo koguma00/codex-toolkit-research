@@ -1,0 +1,4 @@
+interface:
+  display_name: "SIIT Presentation"
+  short_description: "Create and finish SIIT-style research decks."
+  default_prompt: "Use $siit-presentation to draft this talk in Google Slides and finish it in PowerPoint."

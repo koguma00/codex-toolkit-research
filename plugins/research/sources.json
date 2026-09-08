@@ -1,0 +1,31 @@
+{
+  "ai-paper-search": {
+    "repository": "https://github.com/koguma00/codex-paper-search-venue-first",
+    "commit": "78cd0c33201a28328be0cc71c24e9ca6d841c177",
+    "license": "MIT"
+  },
+  "siit-presentation": {
+    "repository": "https://github.com/koguma00/codex-presentation-siit",
+    "commit": "b67b0711b3de0b805062feaae3a8a8f104fd282e",
+    "license": "MIT"
+  },
+  "aica-reconnect": {
+    "repository": "https://github.com/koguma00/codex-toolkit-research",
+    "commit": "a4f44f1a64bd2aeb476be3151d03fd205cd195d8",
+    "license": "MIT"
+  },
+  "eli5": {
+    "repository": "https://github.com/anthropics/claude-plugins-community.git",
+    "commit": "794af9e63d07fad17087dcab61f21f44cb48effd",
+    "path": "eli5/skills/eli5",
+    "codex_adapter": "eli5-v1",
+    "license": "Apache-2.0"
+  },
+  "handoff": {
+    "repository": "https://github.com/mattpocock/skills.git",
+    "commit": "d28dfdc39beadc3142a33359b5cfa4765dcbd0bc",
+    "path": "skills/productivity/handoff",
+    "codex_adapter": "handoff-v2",
+    "license": "MIT"
+  }
+}

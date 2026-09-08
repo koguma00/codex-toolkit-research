@@ -1,66 +1,68 @@
-# Research Codex Toolkit
+# Research plugin
 
-Public, version-pinned management for a personal Codex research stack.
+One Codex plugin containing five focused skills and the arXiv MCP connection.
+The repository name is retained to preserve existing links and Git history.
 
-## New device
+| Skill | Purpose |
+| --- | --- |
+| ai-paper-search | Official AI proceedings, version verification and BibTeX |
+| siit-presentation | SIIT/KAIST presentation workflow and editable templates |
+| aica-reconnect | AICA SSH recovery and optional mobile pairing |
+| eli5 | Simple visual HTML explanations |
+| handoff | Copyable context for another conversation |
 
-Give a fresh Codex session only this request:
+## Install on another device
 
-> https://github.com/koguma00/codex-toolkit-research 에서 연구용 툴킷 설치해.
-
-No prior plugin context or GitHub login is required. Codex should clone this
-public repository and run one of these commands:
+Tell Codex: `Install my research plugin from https://github.com/koguma00/codex-toolkit-research`.
+With Codex CLI available:
 
 ```bash
-# macOS or Linux
-python3 bootstrap.py
-
-# Windows PowerShell
-py -3 bootstrap.py
+codex plugin marketplace add https://github.com/koguma00/codex-toolkit-research.git
+codex plugin add research@research-codex
 ```
 
-Start a new Codex conversation after installation. You can then say only:
+If the marketplace is already registered, upgrade it instead of adding it.
+Alternatively clone this repository and run `python3 bootstrap.py` (`py -3` on Windows).
+Start a new task to load the new skill/tool set.
 
-- `연구용 플러그인 설치해.`
-- `연구용 플러그인 업데이트해.`
-- `연구용 플러그인 상태 확인해.`
-- `AICA 포트 <현재 포트>로 다시 연결하고 iPhone 연결 코드 발급해.`
+All five skills, search source code, and presentation assets are included.
+The search runtime uses its dedicated Conda environment; see
+[the runtime guide](plugins/research/README.md). The arXiv MCP runtime uses
+`uvx arxiv-mcp-server==0.7.1`; `uvx` must be on PATH. This external tool runtime
+is separate from project ML environments. Installation does not install Conda,
+uv, or authenticate services. Google Slides access and AICA credentials are
+configured separately when needed. Global/project AGENTS remain in their own
+Git repositories.
 
-## Default stack
+## Update
 
-- Research Toolkit Manager `0.4.1`, including the macOS/Windows AICA reconnect
-  and iPhone Remote pairing skill
-- SIIT Presentation `0.1.1`, installed from `codex-presentation-siit` with a Google Slides-first and PowerPoint-finishing workflow
-- AI Paper Search `0.3.1`, including the pinned arXiv MCP runtime
-- Anthropic Community `eli5`, pinned by commit with a minimal Codex adapter
-- Matt Pocock `handoff`, pinned by commit with a copyable-output Codex adapter
+```bash
+codex plugin marketplace upgrade research-codex
+codex plugin add research@research-codex
+```
 
-First-party repositories follow `codex-<purpose>-<specialization>`, so tools
-sort by purpose while the final segment records the implementation intent or local style.
+There is no manager skill and no installation registry of other plugins.
 
-The standalone arXiv MCP plugin is superseded by AI Paper Search and removed
-during toolkit updates to avoid loading the same MCP server twice.
+## Migrate an existing toolkit installation
 
-Project-specific tools such as `auto-eval-MAS` are intentionally not managed
-here. Keep each one in its own project-scoped Codex plugin repository.
+Run `python3 bootstrap.py --migrate-legacy`. It installs and verifies the new
+plugin first, then removes the former paper-search, presentation and manager
+plugins. Toolkit-managed standalone ELI5/Handoff folders are moved intact to a
+dated local backup. Unmanaged same-name folders remain untouched and are
+reported for manual review. Authentication and machine settings are not copied.
 
-The repository contains no credentials or private Codex data. Dependencies are
-downloaded directly from their public upstream repositories at the refs and
-commits pinned in `plugins.lock.json`.
+## Development
 
-## AICA reconnect on macOS and Windows
+All five skills are maintained under `plugins/research/skills/`; search code is
+under `plugins/research/src/`. Older standalone source repositories retain their
+histories but are no longer dependencies. Edit the unified source here.
 
-The bundled `aica-reconnect` skill uses the same OpenSSH aliases and persistent
-AICA environment on both platforms. macOS stores them under `~/.ssh`; Windows
-uses `%USERPROFILE%\.ssh` and applies private-key ACLs with `icacls`. Every
-computer creates its own `aica-codex` Ed25519 key. Only public keys are copied
-to the persistent server-side registry; private keys never enter this
-repository or move between computers.
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests
+conda run -n ai-paper-search python -m pytest plugins/research/tests
+```
 
-Give Codex the current proxy port and ask it to reconnect. On a new computer,
-also provide the AICA host, SSH user, personal persistent root, and admin PEM
-path when asked. Those connection settings are saved only in that computer's
-local Codex home, so later port changes need only the new port. Unknown or
-changed SSH host keys require explicit fingerprint approval before the skill
-trusts them. Connection settings, pairing codes, remote-control environment
-IDs, credentials, and Codex history are not committed.
+Read AGENTS.md before editing. Imported revisions and licenses are recorded in
+[notices](plugins/research/THIRD_PARTY_NOTICES.md) and
+[sources](plugins/research/sources.json). Deep Research and connected service
+plugins remain independently installed.

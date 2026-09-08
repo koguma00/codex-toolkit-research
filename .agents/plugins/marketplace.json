@@ -5,10 +5,10 @@
   },
   "plugins": [
     {
-      "name": "research-toolkit-manager",
+      "name": "research",
       "source": {
         "source": "local",
-        "path": "./plugins/research-toolkit-manager"
+        "path": "./plugins/research"
       },
       "policy": {
         "installation": "AVAILABLE",

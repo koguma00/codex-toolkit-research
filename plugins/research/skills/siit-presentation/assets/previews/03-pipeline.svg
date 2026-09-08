@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <style>
+    text { font-family: "Noto Sans KR", sans-serif; fill: #2D3741; }
+    .title { font-size: 54px; font-weight: 700; }
+    .h { font-size: 28px; font-weight: 700; }
+    .b { font-size: 22px; }
+    .s { font-size: 17px; fill: #636E78; }
+    .box { fill: #FFFFFF; stroke: #CDD5DD; stroke-width: 2; }
+  </style>
+  <text x="82" y="88" class="title">Pipeline</text>
+  <path d="M82 126 H1290" stroke="#0E6EB8" stroke-width="5"/><path d="M1290 126 H1518" stroke="#8EC31F" stroke-width="5"/>
+  <text x="85" y="185" class="b">A directional mechanism with editable modules</text><rect x="90" y="315" width="280" height="250" class="box"/><text x="125" y="375" class="h">INPUT</text><text x="125" y="430" class="b">Task and team</text><text x="125" y="470" class="s">Outputs · traces</text><path d="M390 440 H470" stroke="#0E6EB8" stroke-width="7"/><path d="M460 420 L490 440 L460 460" fill="none" stroke="#0E6EB8" stroke-width="7"/><rect x="510" y="315" width="280" height="250" class="box"/><text x="545" y="375" class="h">ANALYZE</text><text x="545" y="430" class="b">Residual pattern</text><text x="545" y="470" class="s">Missing strategy</text><path d="M810 440 H890" stroke="#0E6EB8" stroke-width="7"/><path d="M880 420 L910 440 L880 460" fill="none" stroke="#0E6EB8" stroke-width="7"/><rect x="930" y="315" width="280" height="250" class="box"/><text x="965" y="375" class="h">DESIGN</text><text x="965" y="430" class="b">New component</text><text x="965" y="470" class="s">Complementary role</text><path d="M1230 440 H1310" stroke="#8EC31F" stroke-width="7"/><path d="M1300 420 L1330 440 L1300 460" fill="none" stroke="#8EC31F" stroke-width="7"/><rect x="1350" y="315" width="180" height="250" class="box"/><text x="1380" y="375" class="h">TEST</text><text x="1380" y="430" class="b">Utility</text><text x="1380" y="470" class="s">Matched cost</text>
+  <text x="1400" y="852" class="s">SIIT STYLE</text>
+</svg>

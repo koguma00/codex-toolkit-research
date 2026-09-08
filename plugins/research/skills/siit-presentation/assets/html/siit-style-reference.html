@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SIIT Presentation Style Reference</title>
+<style>
+:root{--navy:#004191;--blue:#0e6eb8;--green:#8ec31f;--text:#2d3741;--deep:#142e47;--muted:#636e78;--line:#cdd5dd;--bg:#fff}
+*{box-sizing:border-box} body{margin:0;background:#e9eef3;color:var(--text);font-family:"Noto Sans KR",sans-serif}
+main{width:min(1280px,96vw);margin:32px auto 80px}.slide{position:relative;aspect-ratio:16/9;margin:0 0 34px;background:var(--bg);padding:5.5% 5.2%;overflow:hidden;box-shadow:0 10px 36px #142e4730}
+.slide h1{margin:0;font-size:clamp(28px,3.1vw,52px);line-height:1.08}.slide h2{font-size:clamp(18px,1.65vw,28px);margin:0 0 18px}.slide p{font-size:clamp(14px,1.25vw,21px);line-height:1.55}.rule{display:flex;height:5px;margin:25px 0 36px}.rule b{display:block;background:var(--blue);flex:5}.rule i{display:block;background:var(--green);flex:1}.brand{position:absolute;right:5.2%;bottom:4%;font-size:14px;color:var(--muted);letter-spacing:.08em}
+.cover{display:flex;flex-direction:column;justify-content:center;padding-left:10%}.cover:before,.cover:after{content:"";height:3px;background:var(--blue);width:82%;position:absolute;left:9%}.cover:before{top:35%}.cover:after{bottom:34%;background:var(--green)}
+.cover h1{font-size:clamp(40px,5.2vw,84px)}.cover h2{margin-top:18px;color:var(--deep)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:2.2%;align-items:stretch}.card{border:2px solid var(--line);padding:28px 24px;min-height:210px;background:#fff}.card .n{color:var(--blue);font-weight:700;font-size:18px}.card strong{display:block;font-size:25px;margin:20px 0 10px}.card.green{border-left:10px solid var(--green)}.card.blue{border-left:10px solid var(--blue)}
+.pipeline{display:grid;grid-template-columns:1fr 70px 1fr 70px 1fr;align-items:center}.module{border:2px solid var(--line);padding:30px;min-height:220px}.arrow{text-align:center;color:var(--blue);font-size:48px}.metrics{display:grid;grid-template-columns:2fr 1fr;gap:4%}.rows,.outputs{border:2px solid var(--line);padding:28px}.row{display:grid;grid-template-columns:1.4fr .6fr .8fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}.row:last-child{border:0}.value{font-size:28px;font-weight:700}.muted{color:var(--muted)}.outputs li{margin:22px 0;font-size:20px}
+.recap{display:grid;grid-template-columns:repeat(3,1fr);gap:3%}.recap .card{min-height:250px}.recap .card:nth-child(3){border-top:8px solid var(--green)}
+.note{position:absolute;left:5.2%;bottom:4%;font-size:13px;color:var(--muted)}
+@media(max-width:800px){main{width:100%;margin:0}.slide{margin:0;box-shadow:none}.flow{grid-template-columns:1fr 1fr}.pipeline{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}}
+@media print{body{background:#fff}.slide{break-after:page;margin:0;box-shadow:none;width:100vw;height:56.25vw}}
+</style>
+</head>
+<body><main>
+<section class="slide cover"><h1>Research Presentation</h1><h2>Method · Evidence · Interpretation</h2><p>Affiliation · Presenter · Date</p><span class="brand">SIIT STYLE</span></section>
+<section class="slide"><h1>Google Slides first, PowerPoint last</h1><div class="rule"><b></b><i></i></div><div class="flow">
+<div class="card blue"><span class="n">01</span><strong>Draft</strong><p>Frame the question and slide sequence in Google Slides.</p></div>
+<div class="card blue"><span class="n">02</span><strong>Revise</strong><p>Iterate visible copy, diagrams, and evidence.</p></div>
+<div class="card"><span class="n">03</span><strong>Freeze</strong><p>Stabilize order, copy, figures, and talk duration.</p></div>
+<div class="card green"><span class="n">04</span><strong>Finish</strong><p>Refine masters, spacing, alignment, and export in PowerPoint.</p></div>
+</div><span class="brand">SIIT STYLE</span></section>
+<section class="slide"><h1>Method pipeline</h1><div class="rule"><b></b><i></i></div><div class="pipeline">
+<div class="module"><h2>INPUT</h2><p>Task, team state, outputs, and traces</p></div><div class="arrow">→</div>
+<div class="module"><h2>ANALYZE</h2><p>Residual pattern and missing strategy</p></div><div class="arrow">→</div>
+<div class="module"><h2>DESIGN & TEST</h2><p>Complementary component under matched cost</p></div>
+</div><span class="brand">SIIT STYLE</span></section>
+<section class="slide"><h1>Results under one protocol</h1><div class="rule"><b></b><i></i></div><div class="metrics">
+<div class="rows"><div class="row"><strong>Primary metric</strong><span class="value">00.0</span><span class="muted">baseline 00.0</span></div>
+<div class="row"><strong>Secondary metric</strong><span class="value">00.0</span><span class="muted">baseline 00.0</span></div>
+<div class="row"><strong>Cost</strong><span class="value">00.0</span><span class="muted">tokens / calls</span></div></div>
+<div class="outputs"><h2>Outputs</h2><ol><li>Main table</li><li>Ablation</li><li>Failure cases</li><li>Artifacts</li></ol></div>
+</div><span class="brand">SIIT STYLE</span></section>
+<section class="slide"><h1>From completed work to the next question</h1><div class="rule"><b></b><i></i></div><div class="recap">
+<div class="card"><span class="n">STEP 1</span><strong>Problem ↔ Evidence</strong><p>Establish the failure mode.</p></div>
+<div class="card"><span class="n">STEP 2</span><strong>Method ↔ Mechanism</strong><p>Target the measured gap.</p></div>
+<div class="card"><span class="n">STEP 3</span><strong>Result ↔ Meaning</strong><p>Interpret gains and limitations.</p></div>
+</div><span class="note">Noto Sans KR · white canvas · restrained blue and green accents</span><span class="brand">SIIT STYLE</span></section>
+</main></body></html>

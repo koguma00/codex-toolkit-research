@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <style>
+    text { font-family: "Noto Sans KR", sans-serif; fill: #2D3741; }
+    .title { font-size: 54px; font-weight: 700; }
+    .h { font-size: 28px; font-weight: 700; }
+    .b { font-size: 22px; }
+    .s { font-size: 17px; fill: #636E78; }
+    .box { fill: #FFFFFF; stroke: #CDD5DD; stroke-width: 2; }
+  </style>
+  <text x="82" y="88" class="title">Recap</text>
+  <path d="M82 126 H1290" stroke="#0E6EB8" stroke-width="5"/><path d="M1290 126 H1518" stroke="#8EC31F" stroke-width="5"/>
+  <text x="85" y="190" class="b">Compress completed work into one transition argument</text><rect x="100" y="285" width="390" height="290" class="box"/><text x="140" y="350" class="h">STEP 1</text><text x="140" y="420" class="b">Problem ↔ Evidence</text><text x="140" y="465" class="s">Establish the failure mode</text><path d="M510 430 H570" stroke="#0E6EB8" stroke-width="6"/><rect x="600" y="285" width="390" height="290" class="box"/><text x="640" y="350" class="h">STEP 2</text><text x="640" y="420" class="b">Method ↔ Mechanism</text><text x="640" y="465" class="s">Target the measured gap</text><path d="M1010 430 H1070" stroke="#8EC31F" stroke-width="6"/><rect x="1100" y="285" width="390" height="290" class="box"/><text x="1140" y="350" class="h">STEP 3</text><text x="1140" y="420" class="b">Result ↔ Meaning</text><text x="1140" y="465" class="s">Interpret gains and limits</text>
+  <text x="1400" y="852" class="s">SIIT STYLE</text>
+</svg>

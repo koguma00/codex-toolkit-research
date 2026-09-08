@@ -1,0 +1,7 @@
+interface:
+  display_name: "AI Paper Search"
+  short_description: "Venue-first AI conference paper search"
+  default_prompt: "Use $ai-paper-search to find verified AI conference papers on LLM multi-agent systems."
+
+policy:
+  allow_implicit_invocation: true

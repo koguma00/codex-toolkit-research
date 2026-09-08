@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <style>
+    text { font-family: "Noto Sans KR", sans-serif; fill: #2D3741; }
+    .title { font-size: 54px; font-weight: 700; }
+    .h { font-size: 28px; font-weight: 700; }
+    .b { font-size: 22px; }
+    .s { font-size: 17px; fill: #636E78; }
+    .box { fill: #FFFFFF; stroke: #CDD5DD; stroke-width: 2; }
+  </style>
+  <text x="82" y="88" class="title">Four Part Plan</text>
+  <path d="M82 126 H1290" stroke="#0E6EB8" stroke-width="5"/><path d="M1290 126 H1518" stroke="#8EC31F" stroke-width="5"/>
+  <text x="85" y="185" class="b">Four parallel work packages with restrained accents</text><rect x="90" y="260" width="340" height="390" class="box"/><rect x="90" y="260" width="12" height="390" fill="#004191"/><text x="130" y="330" class="h">01 · FORMULATE</text><text x="130" y="405" class="b">Problem and protocol</text><text x="130" y="455" class="s">Team · task · budget</text><rect x="460" y="260" width="340" height="390" class="box"/><rect x="460" y="260" width="12" height="390" fill="#0E6EB8"/><text x="500" y="330" class="h">02 · METHOD</text><text x="500" y="405" class="b">Targeted generation</text><text x="500" y="455" class="s">Residual · newcomer</text><rect x="830" y="260" width="340" height="390" class="box"/><rect x="830" y="260" width="12" height="390" fill="#0E6EB8"/><text x="870" y="330" class="h">03 · EVALUATE</text><text x="870" y="405" class="b">Matched comparison</text><text x="870" y="455" class="s">Quality · cost</text><rect x="1200" y="260" width="310" height="390" class="box"/><rect x="1200" y="260" width="12" height="390" fill="#8EC31F"/><text x="1240" y="330" class="h">04 · ANALYZE</text><text x="1240" y="405" class="b">Limits and failures</text><text x="1240" y="455" class="s">Robustness · scope</text>
+  <text x="1400" y="852" class="s">SIIT STYLE</text>
+</svg>

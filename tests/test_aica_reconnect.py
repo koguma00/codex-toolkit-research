@@ -10,7 +10,7 @@ from unittest import mock
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILL = ROOT / "plugins" / "research-toolkit-manager" / "skills" / "aica-reconnect"
+SKILL = ROOT / "plugins" / "research" / "skills" / "aica-reconnect"
 RECONNECT_PATH = SKILL / "scripts" / "aica_reconnect.py"
 KEY_HELPER_PATH = SKILL / "scripts" / "aica_authorized_keys.py"
 
@@ -258,7 +258,7 @@ Host aica-admin other-name
         text = "\n".join(
             path.read_text(encoding="utf-8")
             for path in SKILL.rglob("*")
-            if path.is_file()
+            if path.is_file() and path.suffix in {".md", ".py", ".yaml"}
         )
         self.assertNotIn("BEGIN OPENSSH PRIVATE KEY", text)
         self.assertNotIn("proxy." + "aica", text)

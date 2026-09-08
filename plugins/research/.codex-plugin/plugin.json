@@ -1,0 +1,30 @@
+{
+  "name": "research",
+  "version": "1.0.0",
+  "description": "Five focused research skills with an arXiv MCP connection.",
+  "author": {
+    "name": "Junwon Ko",
+    "url": "https://github.com/koguma00"
+  },
+  "repository": "https://github.com/koguma00/codex-toolkit-research",
+  "homepage": "https://github.com/koguma00/codex-toolkit-research",
+  "license": "MIT AND Apache-2.0",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Research",
+    "shortDescription": "Research tools in one plugin.",
+    "longDescription": "Paper search, SIIT presentations, AICA reconnect, ELI5 and handoff. Each skill is used only for its matching task.",
+    "developerName": "Junwon Ko",
+    "category": "Research",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Find verified AI conference papers.",
+      "Create a research presentation in my SIIT style."
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <style>
+    text { font-family: "Noto Sans KR", sans-serif; fill: #2D3741; }
+    .title { font-size: 54px; font-weight: 700; }
+    .h { font-size: 28px; font-weight: 700; }
+    .b { font-size: 22px; }
+    .s { font-size: 17px; fill: #636E78; }
+    .box { fill: #FFFFFF; stroke: #CDD5DD; stroke-width: 2; }
+  </style>
+  <text x="82" y="88" class="title">Metrics</text>
+  <path d="M82 126 H1290" stroke="#0E6EB8" stroke-width="5"/><path d="M1290 126 H1518" stroke="#8EC31F" stroke-width="5"/>
+  <rect x="85" y="215" width="900" height="470" class="box"/><text x="125" y="280" class="h">Matched results</text><path d="M125 315 H945" stroke="#D1D9E0" stroke-width="2"/><text x="125" y="380" class="b">Primary metric</text><text x="590" y="380" class="h">00.0</text><text x="760" y="380" class="s">baseline 00.0</text><path d="M125 420 H945" stroke="#D1D9E0" stroke-width="2"/><text x="125" y="485" class="b">Secondary metric</text><text x="590" y="485" class="h">00.0</text><text x="760" y="485" class="s">baseline 00.0</text><path d="M125 525 H945" stroke="#D1D9E0" stroke-width="2"/><text x="125" y="590" class="b">Cost</text><text x="590" y="590" class="h">00.0</text><text x="760" y="590" class="s">tokens / calls</text><rect x="1040" y="215" width="475" height="470" class="box"/><text x="1080" y="280" class="h">Outputs</text><text x="1080" y="365" class="b">01 · Main table</text><text x="1080" y="435" class="b">02 · Ablation</text><text x="1080" y="505" class="b">03 · Failure cases</text><text x="1080" y="575" class="b">04 · Artifacts</text>
+  <text x="1400" y="852" class="s">SIIT STYLE</text>
+</svg>

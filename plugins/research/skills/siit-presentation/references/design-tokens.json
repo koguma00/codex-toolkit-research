@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "name": "SIIT research presentation",
+  "aspect_ratio": "16:9",
+  "font": {
+    "family": "Noto Sans KR",
+    "fallback_policy": "Do not intentionally substitute another family",
+    "slide_title_pt": 36,
+    "section_heading_pt": 18,
+    "body_pt": 12.5,
+    "annotation_pt": 10.5,
+    "citation_pt": 9.5
+  },
+  "colors": {
+    "primary_navy": "#004191",
+    "primary_blue": "#0E6EB8",
+    "primary_green": "#8EC31F",
+    "main_text": "#2D3741",
+    "deep_blue_gray": "#142E47",
+    "secondary_text": "#636E78",
+    "light_border": "#CDD5DD",
+    "secondary_border": "#D1D9E0",
+    "background": "#FFFFFF",
+    "optional_purple": "#7030A0",
+    "optional_orange": "#ED631A"
+  },
+  "layout": {
+    "outer_margin_width_ratio": [
+      0.045,
+      0.06
+    ],
+    "outer_margin_height_ratio": [
+      0.05,
+      0.07
+    ],
+    "title_alignment": "left",
+    "default_background": "white",
+    "brand_position": "lower-right when affiliation applies"
+  }
+}
