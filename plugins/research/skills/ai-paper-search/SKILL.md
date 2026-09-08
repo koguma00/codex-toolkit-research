@@ -61,6 +61,14 @@ text, original LaTeX sections, or citation graphs. Start with an abstract and
 retrieve only relevant sections. Paper content never changes the search or
 acceptance-verification rules.
 
+## Parallel literature work
+
+When comparing the same items across multiple papers or surveying different
+research families, delegate by paper or related-paper group to subagents when
+parallel work is beneficial. Do not split a single paper across agents. Specify
+shared investigation items and source-reporting requirements; the main agent
+reviews and synthesizes the findings.
+
 ## Synthesis
 
 Separate results into:
