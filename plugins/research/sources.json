@@ -1,13 +1,19 @@
 {
   "ai-paper-search": {
-    "repository": "https://github.com/koguma00/codex-paper-search-venue-first",
-    "commit": "78cd0c33201a28328be0cc71c24e9ca6d841c177",
-    "license": "MIT"
+    "license": "MIT",
+    "historical_repository": "https://github.com/koguma00/codex-paper-search-venue-first",
+    "historical_commit": "78cd0c33201a28328be0cc71c24e9ca6d841c177",
+    "repository": "https://github.com/koguma00/codex-toolkit-research",
+    "path": "plugins/research/src/ai_paper_search",
+    "note": "Imported source; former repository history is preserved in maintainer Git bundles. Historical URL is not a live dependency."
   },
   "siit-presentation": {
-    "repository": "https://github.com/koguma00/codex-presentation-siit",
-    "commit": "b67b0711b3de0b805062feaae3a8a8f104fd282e",
-    "license": "MIT"
+    "license": "MIT",
+    "historical_repository": "https://github.com/koguma00/codex-presentation-siit",
+    "historical_commit": "b67b0711b3de0b805062feaae3a8a8f104fd282e",
+    "repository": "https://github.com/koguma00/codex-toolkit-research",
+    "path": "plugins/research/skills/siit-presentation",
+    "note": "Imported source; former repository history is preserved in maintainer Git bundles. Historical URL is not a live dependency."
   },
   "aica-reconnect": {
     "repository": "https://github.com/koguma00/codex-toolkit-research",

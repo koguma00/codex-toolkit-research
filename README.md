@@ -54,8 +54,8 @@ reported for manual review. Authentication and machine settings are not copied.
 ## Development
 
 All five skills are maintained under `plugins/research/skills/`; search code is
-under `plugins/research/src/`. Older standalone source repositories retain their
-histories but are no longer dependencies. Edit the unified source here.
+under `plugins/research/src/`. Former standalone repository histories are preserved in maintainer Git backups.
+They are no longer dependencies. Edit the unified source here.
 
 ```bash
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests

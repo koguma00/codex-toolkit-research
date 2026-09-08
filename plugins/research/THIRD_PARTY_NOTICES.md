@@ -1,7 +1,9 @@
 # Included sources
 
 `sources.json` records the exact imported revisions, not install dependencies.
-Maintained code and assets now live in this plugin.
+Maintained code and assets now live in this plugin. Historical repository
+addresses identify origins only; use the current repository and paths for source
+access. Former standalone Git histories are preserved in maintainer backups.
 
 - AI Paper Search: Copyright (c) 2026 Junwon Ko, MIT; see LICENSE and NOTICE.md.
 - SIIT Presentation and AICA Reconnect: Copyright (c) 2026 koguma00, MIT.
