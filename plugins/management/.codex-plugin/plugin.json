@@ -1,0 +1,22 @@
+{
+  "name": "management",
+  "version": "1.0.0",
+  "description": "AICA connection recovery and research harness review skills.",
+  "author": {
+    "name": "Junwon Ko",
+    "url": "https://github.com/koguma00"
+  },
+  "repository": "https://github.com/koguma00/codex-toolkit",
+  "homepage": "https://github.com/koguma00/codex-toolkit",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Management",
+    "shortDescription": "Maintain AICA access and research instructions.",
+    "longDescription": "Reconnect the personal AICA Codex host and review research harness instructions when needed.",
+    "developerName": "Junwon Ko",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": ["Restore my AICA Codex connection.", "Review a research harness instruction after an observed failure."]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "aica-reconnect": {
+    "repository": "https://github.com/koguma00/codex-toolkit",
+    "commit": "a4f44f1a64bd2aeb476be3151d03fd205cd195d8",
+    "license": "MIT",
+    "path": "plugins/management/skills/aica-reconnect"
+  }
+}

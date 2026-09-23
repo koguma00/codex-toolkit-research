@@ -1,7 +1,7 @@
 {
-  "name": "research-codex",
+  "name": "junwon",
   "interface": {
-    "displayName": "Research Codex"
+    "displayName": "Junwon Codex Toolkit"
   },
   "plugins": [
     {
@@ -15,6 +15,18 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Research"
+    },
+    {
+      "name": "management",
+      "source": {
+        "source": "local",
+        "path": "./plugins/management"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     }
   ]
 }

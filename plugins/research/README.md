@@ -1,7 +1,7 @@
 # Research plugin runtime
 
 The repository README owns plugin installation. This package contains the
-AI Paper Search Python CLI and the six independent skills.
+AI Paper Search Python CLI and four independent research skills.
 
 ## Search environment
 

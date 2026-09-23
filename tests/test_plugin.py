@@ -6,23 +6,28 @@ from pathlib import Path
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / 'plugins/research'
+RESEARCH = ROOT / 'plugins/research'
+MANAGEMENT = ROOT / 'plugins/management'
 spec = importlib.util.spec_from_file_location('bootstrap', ROOT / 'bootstrap.py')
 bootstrap = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(bootstrap)
 
 class PluginTests(unittest.TestCase):
-    def test_complete_install_contains_six_skills_and_runtime(self):
-        self.assertEqual(bootstrap.verify_install({'installedPath': str(PLUGIN)}), '1.0.3')
+    def test_both_plugins_contain_their_skills_and_runtime(self):
+        self.assertEqual(bootstrap.verify_install({'installedPath': str(RESEARCH)}, 'research'), '1.1.0')
+        self.assertEqual(bootstrap.verify_install({'installedPath': str(MANAGEMENT)}, 'management'), '1.0.0')
         market = json.loads((ROOT / '.agents/plugins/marketplace.json').read_text())
-        self.assertEqual([p['name'] for p in market['plugins']], ['research'])
-        self.assertEqual(market['plugins'][0]['source']['path'], './plugins/research')
+        self.assertEqual(market['name'], 'junwon')
+        self.assertEqual([p['name'] for p in market['plugins']], ['research', 'management'])
+        self.assertEqual([p['source']['path'] for p in market['plugins']],
+                         ['./plugins/research', './plugins/management'])
         for name in ('eli5', 'handoff'):
-            self.assertTrue((PLUGIN / 'skills' / name / 'LICENSE').is_file())
+            self.assertTrue((RESEARCH / 'skills' / name / 'LICENSE').is_file())
 
     def test_failed_install_never_removes_legacy(self):
         with patch.object(bootstrap.shutil, 'which', return_value='codex'), \
-             patch.object(bootstrap, 'run', side_effect=[{'marketplaces': []}, {}, RuntimeError('install failed')]), \
+             patch.object(bootstrap, 'run', side_effect=[{'marketplaces': []}, {},
+                      {'installedPath': str(RESEARCH)}, RuntimeError('install failed')]), \
              patch.object(bootstrap, 'migrate') as migrate:
             with self.assertRaises(RuntimeError):
                 bootstrap.main(['--migrate-legacy'])
@@ -55,7 +60,7 @@ class PluginTests(unittest.TestCase):
 
     def test_conflicting_marketplace_is_preserved(self):
         with patch.object(bootstrap.shutil, 'which', return_value='codex'), \
-             patch.object(bootstrap, 'run', return_value={'marketplaces':[{'name':'research-codex','marketplaceSource':{'source':'/different/repository'}}]}) as run:
+             patch.object(bootstrap, 'run', return_value={'marketplaces':[{'name':'junwon','marketplaceSource':{'source':'/different/repository'}}]}) as run:
             with self.assertRaises(RuntimeError):
                 bootstrap.main([])
             self.assertEqual(run.call_count, 1)

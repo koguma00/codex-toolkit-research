@@ -10,7 +10,7 @@ from unittest import mock
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILL = ROOT / "plugins" / "research" / "skills" / "aica-reconnect"
+SKILL = ROOT / "plugins" / "management" / "skills" / "aica-reconnect"
 RECONNECT_PATH = SKILL / "scripts" / "aica_reconnect.py"
 KEY_HELPER_PATH = SKILL / "scripts" / "aica_authorized_keys.py"
 
