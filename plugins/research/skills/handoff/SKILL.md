@@ -3,12 +3,12 @@ name: handoff
 description: Compact the current conversation into copyable Markdown for another agent to continue the work.
 ---
 
-Write a handoff document summarising the current conversation so a fresh agent can continue the work. Output it directly in the conversation inside one fenced Markdown code block so the user can copy and paste it. Do not save a file unless the user explicitly asks. Output no preamble or follow-up outside the block.
+Return only a compact handoff document as ordinary rendered Markdown in one assistant response, ready for conversation-level copying. Use fenced code blocks only for literal snippets. Save a file only when the user explicitly asks.
 
 Include a "suggested skills" section in the document, naming which skills the next agent should call the Skill tool for.
 
-Do not duplicate content already captured in other artifacts (specs, plans, ADRs, issues, commits, diffs). Reference them by path or URL instead.
+Reference content already captured in other artifacts (specs, plans, ADRs, issues, commits, diffs) by path or URL, and summarize only the context needed to continue the work.
 
-Redact any sensitive information, such as API keys, passwords, or personally identifiable information.
+Exclude sensitive information such as API keys, passwords, and personally identifiable information.
 
 If the user passed arguments, treat them as a description of what the next session will focus on and tailor the doc accordingly.

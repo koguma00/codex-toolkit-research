@@ -1,8 +1,8 @@
 # Research plugin development
 
-Own one `research` plugin with five focused skills: ai-paper-search,
-siit-presentation, aica-reconnect, eli5 and handoff. Keep each skill scoped to
-its task; do not introduce an overarching research workflow or manager skill.
+Own one `research` plugin with six focused skills: ai-paper-search,
+siit-presentation, aica-reconnect, eli5, handoff and harness-review. Keep each
+skill scoped to its task; do not introduce an overarching research workflow.
 
 ## Structure
 

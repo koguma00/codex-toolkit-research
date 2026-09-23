@@ -1,7 +1,7 @@
 # Research plugin runtime
 
 The repository README owns plugin installation. This package contains the
-AI Paper Search Python CLI and the five independent skills.
+AI Paper Search Python CLI and the six independent skills.
 
 ## Search environment
 
@@ -24,6 +24,8 @@ For source development use `python -m pip install -e '.[test]'` inside the same
 Conda environment. A non-editable installation is preferable for usage because
 plugin updates can remove old cache directories. Do not create a second copy
 of a project's ML environment for this tool.
+When Conda lists this environment by absolute prefix rather than name, use
+`conda run -p /absolute/path/to/ai-paper-search` in place of `conda run -n ai-paper-search`.
 
 The arXiv MCP connection is declared in .mcp.json and uses the separately
 installed `uvx` tool runtime. Search and arXiv do not depend on other plugins.

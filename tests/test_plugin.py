@@ -12,8 +12,8 @@ bootstrap = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(bootstrap)
 
 class PluginTests(unittest.TestCase):
-    def test_complete_install_contains_five_skills_and_runtime(self):
-        self.assertEqual(bootstrap.verify_install({'installedPath': str(PLUGIN)}), '1.0.2')
+    def test_complete_install_contains_six_skills_and_runtime(self):
+        self.assertEqual(bootstrap.verify_install({'installedPath': str(PLUGIN)}), '1.0.3')
         market = json.loads((ROOT / '.agents/plugins/marketplace.json').read_text())
         self.assertEqual([p['name'] for p in market['plugins']], ['research'])
         self.assertEqual(market['plugins'][0]['source']['path'], './plugins/research')

@@ -13,7 +13,7 @@ from pathlib import Path
 REPOSITORY = 'https://github.com/koguma00/codex-toolkit-research.git'
 MARKETPLACE = 'research-codex'
 PLUGIN_ID = 'research@research-codex'
-SKILLS = {'ai-paper-search', 'siit-presentation', 'aica-reconnect', 'eli5', 'handoff'}
+SKILLS = {'ai-paper-search', 'siit-presentation', 'aica-reconnect', 'eli5', 'handoff', 'harness-review'}
 LEGACY = ('ai-paper-search@ai-paper-search', 'siit-presentation@siit-presentation',
           'research-toolkit-manager@research-codex')
 

@@ -1,6 +1,6 @@
 # Research plugin
 
-One Codex plugin containing five focused skills and the arXiv MCP connection.
+One Codex plugin containing six focused skills and the arXiv MCP connection.
 The repository name is retained to preserve existing links and Git history.
 
 | Skill | Purpose |
@@ -10,6 +10,7 @@ The repository name is retained to preserve existing links and Git history.
 | aica-reconnect | AICA SSH recovery and optional mobile pairing |
 | eli5 | Simple visual HTML explanations |
 | handoff | Copyable context for another conversation |
+| harness-review | Correct and audit research harness instructions from concrete examples |
 
 ## Install on another device
 
@@ -25,14 +26,14 @@ If the marketplace is already registered, upgrade it instead of adding it.
 Alternatively clone this repository and run `python3 bootstrap.py` (`py -3` on Windows).
 Start a new task to load the new skill/tool set.
 
-All five skills, search source code, and presentation assets are included.
+All six skills, search source code, and presentation assets are included.
 The search runtime uses its dedicated Conda environment; see
 [the runtime guide](plugins/research/README.md). The arXiv MCP runtime uses
 `uvx arxiv-mcp-server==0.7.1`; `uvx` must be on PATH. This external tool runtime
 is separate from project ML environments. Installation does not install Conda,
 uv, or authenticate services. Google Slides access and AICA credentials are
-configured separately when needed. Global/project AGENTS remain in their own
-Git repositories.
+configured separately when needed. Global and project instructions remain in
+the separate `codex-harness` repository.
 
 ## Update
 
@@ -41,7 +42,8 @@ codex plugin marketplace upgrade research-codex
 codex plugin add research@research-codex
 ```
 
-There is no manager skill and no installation registry of other plugins.
+The plugin does not install or synchronize the harness; `harness-review` is an
+on-demand instruction review workflow.
 
 ## Migrate an existing toolkit installation
 
@@ -53,7 +55,7 @@ reported for manual review. Authentication and machine settings are not copied.
 
 ## Development
 
-All five skills are maintained under `plugins/research/skills/`; search code is
+All six skills are maintained under `plugins/research/skills/`; search code is
 under `plugins/research/src/`. Former standalone repository histories are preserved in maintainer Git backups.
 They are no longer dependencies. Edit the unified source here.
 
